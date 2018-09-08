@@ -21,10 +21,23 @@ $(document).ready(function() {
     });
   
 
-    // Start recording handlerj
+    // Start recording handler
     $("#mediaButton").mousedown(function() {
       console.log("recording...");
       recorder.startRecording();
+      if (recorder.isRecording()) {
+        // if it is running - check the time seconds every second
+        var recall = setInterval(checktime, 1000);
+        function checktime() {
+          time = recorder.recordingTime();
+          console.log(time);
+          // if time is over 4
+          if (time >= 4) {
+            $('#mediaButton').mouseup();
+            $('#mediaButton').mousedown();
+          }
+        }
+      }
     })
   
     // End recording handler
