@@ -5,6 +5,25 @@
     <meta charset='utf-8'>
     <!-- materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+<<<<<<< HEAD
+    <link rel='stylesheet' href="../static/style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Cassette</title>
+  </head>
+  <body>
+    <div class='cassette-image'>
+      <div class='cassette-container'>
+        <div class='section no-pad-bot'>
+          <h1 class='header center teal-text text-lighten-2'>Cassette</h1> 
+        </div>
+        <div class='row center'>
+          <h5 class='header col s12 light'>A step closer to understanding emotion.</h5>
+        </div>
+      </div>
+    </div>
+    <div class='center-align'> 
+      <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">&#9658;</i></a>
+=======
     <!-- p5 js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>   
     <!-- jquery -->
@@ -27,6 +46,7 @@
       <a class="waves-effect waves-light btn">
         <i id="playerIcon" class="material-icons">Play</i>
       </a>
+>>>>>>> 0ec814b23c1b5b54dc4ecf9f43d56bd5a367a896
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
