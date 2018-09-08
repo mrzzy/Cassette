@@ -5,6 +5,9 @@
     <meta charset='utf-8'>
     <!-- materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!-- p5 js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>   
     <!-- jquery -->
@@ -18,18 +21,22 @@
     <title>Cassette</title>
   </head>
   <body>
-
-    <div class='center-align'>
-      <h1>Cassette</h1> 
+    <div class='cassette'>
+      <div class='container'>
+        <img src="../static/images/cassette.png" class='icon'>
+        <h2 class='cassette-name'>Cassette<h2>
+        <p class='subtext'><span style='color: #A5BE00'>Emotions</span> Illustrified</p>
+        <p class='subtext2'>Press Play to begin.</p>
+        <div>
+          <img src="../static/images/cassette2.png" class='icon2'>
+        </div>
+        <div id="mediaButton" class='button-align'>
+          <a class="waves-effect waves-light btn-large">
+            <i id="playerIcon" class="material-icons">Play</i>
+          </a>
+        </div>
+      </div> 
     </div>
-
-    <div id="mediaButton" class='center-align'>
-      <a class="waves-effect waves-light btn">
-        <i id="playerIcon" class="material-icons">Play</i>
-      </a>
-    </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
   </body>
 </html>

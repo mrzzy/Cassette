@@ -1,23 +1,102 @@
-div.cassetteimage {
-  background-color: #84BC9C;
-  width:100%;
-  height:100%;
+ html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    background-color: #427AA1;
+ } 
+
+.cassette {
+  /*background-color:#f56087;*/
+  background-color:#427AA1;
+  height:100vh; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.cassette-image {
-  background-image: url(../static/images/cassete.jpg);
-  width:100%;
-  height: auto;
+.icon {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
-.cassette-container {
-  min-height:380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
+.icon2 {
+  opacity: 0.1;
+  width: 256px;
+  height: 256px;
+  /*position: absolute;
+  top: 89%;
+  left: 90%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);*/
+  position:relative;
+  margin-left: 150px;
+  margin-top: 295px; 
+  overflow: hidden;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+.cassette-name {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  position: absolute;
+  top:32%;
+  left:50%;
+  margin-right:-50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.95;
+  font-size: 70px;
+}
+
+.container {
+  border-radius: 4%;
+  /*background-color: #F4F2F3;*/
+  background-color: #EBF2FA;
+  height: 88vh; 
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 4px 11px 6px rgba(36, 31, 31, 0.23); 
+}
+
+.button-align {
+  position:absolute;
+  top: 90%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.btn-large{
+  border-radius:50px;
+  padding: 0 50px;
+  background-color: #427AA1;
+}
+
+.subtext {
+  color: #2b2b2b;
+  font-size: 20px;
+  position: absolute;                                                                                           
+  top: 52%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Lato', sans-serif;
+}
+
+.subtext2 {
+  color: #2b2b2b;
+  font-size: 20px;
+  position: absolute;                                                                                           
+  top: 58%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Lato', sans-serif;
 }
