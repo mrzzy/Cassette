@@ -18,9 +18,11 @@ def audioprocess():
         audio_bytes = request.data
 
         # write the bytes out in wav
-        f = open('test.wav', 'wb')
+        f = open('audio.wav', 'wb')
         f.write(audio_bytes)
         f.close()
+
+        # write some functions here and return it back
 
         return 'post request reached here'
     else:
