@@ -1,0 +1,23 @@
+div.cassetteimage {
+  background-color: #84BC9C;
+  width:100%;
+  height:100%;
+}
+
+.cassette-image {
+  background-image: url(../static/images/cassete.jpg);
+  width:100%;
+  height: auto;
+}
+
+.cassette-container {
+  min-height:380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
