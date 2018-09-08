@@ -28,9 +28,11 @@ $(document).ready(function() {
         bigDiv.style.padding="2px"
         // dynamically get the colour
         spanData.innerHTML = data['text'];
-        spanData.style.color="#fb4f4f"
+
+        spanData.style.color=data['color']
         spanData.style.fontSize="16px"
         spanData.style.margin="2px"
+
         bigDiv.append(spanData)
       })
     });

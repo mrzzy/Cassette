@@ -5,6 +5,18 @@ import datetime
 app = Flask(__name__)
 
 
+emotionMap = {
+    'neutral': '#000000',
+    'calm': '#212F3C',
+    'happy': '#F1C40F',
+    'sad': '#515A5A',
+    'angry': '#CB4335',
+    'fearful': '#9B59B6',
+    'disgust': '#5B2C6F',
+    'surprise': '#06655'
+}
+
+
 @app.route('/', methods=["GET"])
 def index():
     return render_template('index.html')
@@ -35,12 +47,12 @@ def audioprocess():
         (text, {feeling: intensity})
         '''
 
-        # return 'post request reached here'
-        return_text = ('i am an angry flower', {'angry': 0.5})
+        # return_text = ('i am an angry flower', {'angry': 0.5})
+        return_text = ('i am an angry flower', 'disgust')
         print(return_text[0])
         return jsonify(
             text=return_text[0],
-            emotion=return_text[1]
+            color=emotionMap[return_text[1]]
         )
     else:
         # not a post request but they got here anyways
