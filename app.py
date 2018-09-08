@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template, redirect, jsonify
+import datetime
 
 
 app = Flask(__name__)
@@ -18,13 +19,29 @@ def audioprocess():
         audio_bytes = request.data
 
         # write the bytes out in wav
-        f = open('audio.wav', 'wb')
+        filedate = str(datetime.datetime.now())
+        string_wav = filedate + '.wav'
+        print(string_wav)
+        f = open(string_wav, 'wb')
         f.write(audio_bytes)
         f.close()
 
         # write some functions here and return it back
 
-        return 'post request reached here'
+        '''
+        return data
+        feeling - match against list of feelings with colours
+        intensity - 0 to 1
+        (text, {feeling: intensity})
+        '''
+
+        # return 'post request reached here'
+        return_text = ('i am an angry flower', {'angry': 0.5})
+        print(return_text[0])
+        return jsonify(
+            text=return_text[0],
+            emotion=return_text[1]
+        )
     else:
         # not a post request but they got here anyways
         return redirect('/')

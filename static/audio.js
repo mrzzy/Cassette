@@ -17,7 +17,22 @@ $(document).ready(function() {
           data: blob,
           processData: false,
           contentType: false
-      });
+      })
+      .done(function(data) {
+        console.log(data);
+        // do something with the data
+        // #bigContainer - contains all the files
+        console.log(data['text']);
+        var bigDiv = document.getElementById('bigContainer')
+        var spanData = document.createElement('span')
+        bigDiv.style.padding="2px"
+        // dynamically get the colour
+        spanData.innerHTML = data['text'];
+        spanData.style.color="#fb4f4f"
+        spanData.style.fontSize="16px"
+        spanData.style.margin="2px"
+        bigDiv.append(spanData)
+      })
     });
   
 
