@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <!-- p5 js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.js"></script>
     <!-- jquery -->
     <script
             src="https://code.jquery.com/jquery-3.3.1.js"
@@ -14,6 +15,8 @@
             crossorigin="anonymous"></script>
     <!-- scripts -->
     <script type=text/javascript src="{{url_for('static', filename='audio.js')}}"></script>
+    <!-- <script type=text/javascript src="{{url_for('static', filename='newaudio.js')}}"></script> -->
+    <script type=text/javascript src="{{url_for('static', filename='WebAudioRecorder.js')}}"></script>
 		
     <title>Cassette</title>
   </head>
@@ -25,9 +28,10 @@
 
     <div id="mediaButton" class='center-align'>
       <a class="waves-effect waves-light btn">
-        <i id="playerIcon" class="material-icons">Play</i>
+        <i id="playerIcon" class="material-icons ">Record</i>
       </a>
     </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 
