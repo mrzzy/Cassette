@@ -44,33 +44,53 @@ def retrieve_url(src_url, dest_path, chunk_len=1024):
             
     f.close()
 
+# Extract the tarball at the filepath path in the current directory
+def extract_tarball(path):
+    tar = tarfile.open(path, "r:gz")
+    tar.extractall()
+    tar.close()
 
+    
 
 # Abstract class to represent speech to text model
 class TranscribeModel(ABC):
-    @abstractmethod
-    
     # Transcribe the given wave audio object into text
     # Returns the transcribed text
-    def transcribe(audio):
+    @abstractmethod
+    def transcribe(self, audio):
         pass
 
 # Represents a pretrained Deep Speech model for
 # use to convert wave contents to text
 class DeepSpeechModel(TranscribeModel):
-    WORK_DIR = "dp_model/"
+    WORK_DIR = "dp_model"
+    MODEL_PATH = os.path.join(WORK_DIR, "model")
     
-    def __init__():
+    def __init__(self):
         # Setup working directory
-        if not os.path.exists(WORK_DIR): os.mkdir(WORK_DIR)
-        os.chdir(WORK_DIR)
-
+        if not os.path.exists(DeepSpeechModel.WORK_DIR): 
+            os.mkdir(DeepSpeechModel.WORK_DIR)
+        # Retrieve pretrained model if does not already exist
+        if not os.path.exists(DeepSpeechModel.MODEL_PATH): self.retrieve_pretrained()
         
     # Retrieve the pretrained model and saves it in the pretrained working 
     # directory
-    def retrieve_pretrained():
-        if VERBOSE: print("retrieveing pretrained model...")
+    def retrieve_pretrained(self):
+        if VERBOSE: print("Retrieving pretrained model...")
+        
+        # Retrive model
+        model_url = "https://github.com/mozilla/DeepSpeech/releases/downloadv0.1.1/deepspeech-0.1.1-models.tar.gz"
+        compressed_model_path = os.path.join(DeepSpeechModel.WORK_DIR, 
+                                             os.path.basename(model_url))
+        retrieve_url(model_url, compressed_model_path)
+        
+        # Extract model
+        extract_tarball(compressed_model_path)
+        assert os.path.exists(DeepSpeechModel.MODEL_PATH)
     
+    def transcribe(self, audio):
+        pass
+
 if __name__ == "__main__":
-    # Unit tests
-    retrieve_url("http://www.google.com", "test")
+    model = DeepSpeechModel()
+
