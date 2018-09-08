@@ -22,21 +22,26 @@
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .icon2 {
   opacity: 0.1;
-  width: 256px;
-  height: 256px;
+  width: 200px;
+  height: auto;
   /*position: absolute;
   top: 89%;
   left: 90%;
   margin-right: -50%;
   transform: translate(-50%, -50%);*/
-  position:relative;
+  /*position:relative;
   margin-left: 150px;
   margin-top: 295px; 
-  overflow: hidden;
+  overflow: hidden;*/
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
 }
 
 .cassette-name {
@@ -49,20 +54,23 @@
   transform: translate(-50%, -50%);
   opacity: 0.95;
   font-size: 70px;
+  z-index:2;
 }
 
 .container {
   border-radius: 4%;
   /*background-color: #F4F2F3;*/
   background-color: #EBF2FA;
-  height: 88vh; 
+  height: 88vh;
   width: 30%;
-  position: absolute;
+  min-width: 333px; 
+  position: absolute; 
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  box-shadow: 4px 11px 6px rgba(36, 31, 31, 0.23); 
+  box-shadow: 4px 11px 6px rgba(36, 31, 31, 0.23);
+  z-index: 1;
 }
 
 .button-align {
@@ -71,6 +79,7 @@
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+  z-index:2;
 }
 
 .btn-large{
@@ -88,6 +97,7 @@
   margin-right: -50%;
   transform: translate(-50%, -50%);
   font-family: 'Lato', sans-serif;
+  z-index: 2;
 }
 
 .subtext2 {
@@ -99,4 +109,53 @@
   margin-right: -50%;
   transform: translate(-50%, -50%);
   font-family: 'Lato', sans-serif;
+  z-index: 2;
+}
+
+.text-div {
+  position: absolute;
+  z-index: 99;
+  top: 43%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  height: 78%;
+  width: 83%;
+  background-color: #6cc0e5;
+  border-radius: 25px;
+}
+
+#mediaButton {
+  
+}
+
+.emojis {
+  width: 27px;
+  height: 27px; 
+}
+
+.circle-div {
+  width:32px;
+  height:32px;
+  margin-left: 10px;
+  border-radius:50%;
+  float: left;
+}
+
+.text-box {
+  border-radius: 25px;
+  background-color: #EBF2FA;
+  width: 210px;
+  height: 30px;
+  float: left;
+  margin-top: 18px;
+  position: relative;
+}
+
+.messages {
+  font-size: 14px;
+  float: left;
+  top: -28px;
+  left: 12px;
+  position:absolute;
 }

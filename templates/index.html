@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script src="jquery-3.3.1.min.js"></script>
     <!-- p5 js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.js"></script>
@@ -26,14 +27,20 @@
   </head>
   <body>
     <div class='cassette'>
-      <div class='container'>
+      <div class='container'>  
         <img src="../static/images/cassette.png" class='icon'>
         <h2 class='cassette-name'>Cassette<h2>
-        <p class='subtext'><span style='color: #A5BE00'>Emotions</span> Illustrified</p>
-        <p class='subtext2'>Press Play to begin.</p>
-        <div>
-          <img src="../static/images/cassette2.png" class='icon2'>
+        <p class='subtext'><span style='color: #fb4f4f'>Emotions</span> Illustrified</p>
+        <p class='subtext2'>Press Record to begin.</p>
+        <div id='bigContainer' class='text-div'>
+          <div class='circle-div'>
+            <img src='../static/images/emojis/happy.png' class='emojis'> 
+          </div>
+          <div class='text-box'> 
+            <p class='messages'>I'm really happy today!</p>
+          </div>
         </div>
+        <img src="../static/images/cassette2.png" class='icon2'>
         <div id="mediaButton" class='button-align'>
           <a class="waves-effect waves-light btn-large">
             <i class="material-icons">keyboard_voice</i>
