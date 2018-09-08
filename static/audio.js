@@ -1,25 +1,42 @@
 
-// when the button gets clicked
+$(document).ready(function() {
+  function handleSuccess(stream) {
+    // Setup recorder and handlers
+    var context = new AudioContext();
+    var source = context.createMediaStreamSource(stream);
+    var recorder = new WebAudioRecorder(source, {
+      workerDir: "static/",   // must end with slash
+      numChannels: 1,
+    });
 
-$("#mediaButton").ready(function() {
-  $("#mediaButton").click(function() {
-    console.log('clicked');
-    var value = document.getElementById("playerIcon").innerHTML; 
-    console.log(value);
-    if (value === 'Play') {
-      // change value to a stop button
-      $('#playerIcon').text('Stop')
-    } else {
-      // change vlaue to a play button
-      $('#playerIcon').text('Play')
-    }
-  })
+    recorder.onComplete = (function(rec, blob) {
+      console.log(blob);
+      $.ajax({
+          type: "POST",
+          url: "/audioprocess",
+          data: blob,
+          processData: false,
+          contentType: false
+      });
+    });
+  
+
+    // Start recording handlerj
+    $("#mediaButton").mousedown(function() {
+      console.log("recording...");
+      recorder.startRecording();
+    })
+  
+    // End recording handler
+    $("#mediaButton").mouseup(function() {
+      console.log("done recording.");
+      console.log("recording length: " + recorder.recordingTime());
+      recorder.finishRecording();
+    })
+  }
+
+  
+  navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+      .then(handleSuccess);
+
 })
-
-// mic = new p5.AudioIn()
-// mic.start();
-
-// // create a sound recorder
-// recorder = new p5.SoundRecorder();
-// recorder.setInput(mic)
-// soundFile = new p5.SoundFile();

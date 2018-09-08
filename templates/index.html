@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <!-- p5 js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.js"></script>
     <!-- jquery -->
     <script
             src="https://code.jquery.com/jquery-3.3.1.js"
@@ -17,6 +18,8 @@
             crossorigin="anonymous"></script>
     <!-- scripts -->
     <script type=text/javascript src="{{url_for('static', filename='audio.js')}}"></script>
+    <!-- <script type=text/javascript src="{{url_for('static', filename='newaudio.js')}}"></script> -->
+    <script type=text/javascript src="{{url_for('static', filename='WebAudioRecorder.js')}}"></script>
 		
     <title>Cassette</title>
   </head>
@@ -32,7 +35,7 @@
         </div>
         <div id="mediaButton" class='button-align'>
           <a class="waves-effect waves-light btn-large">
-            <i id="playerIcon" class="material-icons">Play</i>
+            <i id="playerIcon" class="material-icons">Record</i>
           </a>
         </div>
       </div> 
