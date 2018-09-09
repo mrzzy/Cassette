@@ -19,9 +19,16 @@ def predict_sentiment(path):
     # Predict sentiment
     predictions = model.predict(features)[0]
 
+    # Compute max label 
+    max_i = 0
+    max_pred = 0
+    for i in range(len(predictions)):
+        if predictions[i] > max_pred:
+            max_pred = predictions[i]
+            max_i = i
+    
     names = [ l[0] for l in LABEL_MAP ]
-    feel_map = dict(zip(names, predictions))
-    return feel_map
+    return names[i]
 
 if __name__ == "__main__":
     print(predict_sentiment("/Users/zzy/Desktop/Untitled.wav"))
