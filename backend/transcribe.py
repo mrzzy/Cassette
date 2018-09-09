@@ -18,10 +18,10 @@ VERBOSE = True
 # Abstract class to represent speech to text model
 class TranscribeModel(ABC):
 
-    # Transcribe the given wave audio object into text
+    # Transcribe the given wave file given by path
     # Returns the transcribed text
     @abstractmethod
-    def transcribe(self, audio):
+    def transcribe(self, path):
         pass
     
 # Represents a external speech to text model 
@@ -30,18 +30,12 @@ class ExternalModel(TranscribeModel):
     def __init__(self):
         self.recogizer = sr.Recognizer()
 
-    def transcribe(self, audio):
-        data = self.convert_data(audio)
-        return self.recogizer.recognize_google(data)
+    def transcribe(self, path):
+        audio_file = sr.AudioFile(path)
+        with audio_file as source:
+            audio = self.recogizer.record(source)
+            return self.recogizer.recognize_google(audio)
     
-    # Convert wave object to AudioData object
-    def convert_data(self, audio):
-        sample_rate = audio.getframerate()
-        sample_width = audio.getsampwidth()
-        frame_data = audio.readframes(audio.getnframes())
-        data = sr.AudioData(frame_data, sample_rate, sample_width)
-
-        return data
     
 if __name__ == "__main__":
     model = ExternalModel()
