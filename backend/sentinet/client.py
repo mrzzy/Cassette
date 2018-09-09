@@ -7,10 +7,13 @@ from keras import models
 from backend.sentinet.dataset import extract_feature, LABEL_MAP
 
 import numpy as np
+import tensorflow as tf
 
 # Predict the sentiment of the wav file given by path 
 # Returns dict of predicted name of feeling to intensity 
 model = models.load_model("backend/sentinet/model.h5")
+model._make_predict_function()
+graph = tf.get_default_graph()
 def predict_sentiment(path):
     # Extract features
     features = extract_feature(path)

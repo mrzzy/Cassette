@@ -3,6 +3,7 @@ import datetime
 
 
 from backend.client import predict
+from backend.sentinet.client import graph
 
 app = Flask(__name__)
 
@@ -35,7 +36,6 @@ def audioprocess():
         # write the bytes out in wav
         filedate = str(datetime.datetime.now())
         string_wav = filedate + '.wav'
-        print(string_wav)
         f = open(string_wav, 'wb')
         f.write(audio_bytes)
         f.close()
@@ -50,8 +50,9 @@ def audioprocess():
         '''
 
         # return_text = ('i am an angry flower', {'angry': 0.5})
-        return_text = predict(string_wav)
-        print(return_text[0])
+        with graph.as_default():
+            return_text = predict(string_wav)
+        print(return_text[1])
         return jsonify(
             text=return_text[0],
             color=emotionMap[return_text[1]]

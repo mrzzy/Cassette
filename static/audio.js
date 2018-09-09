@@ -33,9 +33,11 @@ $(document).ready(function() {
         // dynamically get the colour
         spanData.innerHTML = data['text'];
 
-        spanData.style.color=data['color']
+        spanData.style.backgroundColor=data['color']
+        spanData.style.color="#FFFFFF"
         spanData.style.fontSize="16px"
         spanData.style.margin="2px"
+
 
         bigDiv.append(spanData)
       })
