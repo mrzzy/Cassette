@@ -125,6 +125,7 @@
   /* background-color: #FFFFFF; */
   background-color: #EBF2FA;
   border-radius: 25px;
+  box-shadow: 4px 11px 6px rgba(36, 31, 31, 0.23);
 }
 
 #mediaButton {
@@ -132,8 +133,10 @@
 }
 
 .emojis {
-  width: 27px;
+  width: auto;
   height: 27px; 
+  display: inline-block; 
+  margin-left: 10px;
 }
 
 .circle-div {
@@ -160,4 +163,24 @@
   top: -28px;
   left: 12px;
   position:absolute;
+}
+
+.cheatsheet {
+  height: 30px;
+  width: 70px;
+  display: inline-block;
+  position:relative; 
+  margin-left:70%;
+}
+
+.cheatsheet-div {
+  position:relative;
+  margin-top:10%;
+}
+
+.emotion-labels {
+  position:absolute;
+  color:#EBF2FA;
+  top:-38%;
+  left:173%;
 }
