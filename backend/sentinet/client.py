@@ -27,8 +27,9 @@ def predict_sentiment(path):
             max_pred = predictions[i]
             max_i = i
     
+    
     names = [ l[0] for l in LABEL_MAP ]
-    return names[i]
+    return names[max_i]
 
 if __name__ == "__main__":
     print(predict_sentiment("/Users/zzy/Desktop/Untitled.wav"))
