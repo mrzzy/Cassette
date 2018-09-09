@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, redirect, jsonify
 import datetime
 
 
-import backend.client
+from backend.client import predict
 
 app = Flask(__name__)
 
