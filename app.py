@@ -13,7 +13,7 @@ emotionMap = {
     'angry': '#CB4335',
     'fearful': '#9B59B6',
     'disgust': '#5B2C6F',
-    'surprise': '#06655'
+    'surprise': '#026655'
 }
 
 
@@ -48,7 +48,7 @@ def audioprocess():
         '''
 
         # return_text = ('i am an angry flower', {'angry': 0.5})
-        return_text = ('i am an angry flower', 'disgust')
+        return_text = ('i am an angry flower', 'surprise')
         print(return_text[0])
         return jsonify(
             text=return_text[0],

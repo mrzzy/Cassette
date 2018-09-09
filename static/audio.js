@@ -10,6 +10,7 @@ $(document).ready(function() {
     });
 
     recorder.onComplete = (function(rec, blob) {
+      // prints out size, type: audio/wav
       console.log(blob);
       $.ajax({
           type: "POST",
@@ -19,9 +20,12 @@ $(document).ready(function() {
           contentType: false
       })
       .done(function(data) {
-        console.log(data);
+        // prints out the object
+        // console.log(data);
         // do something with the data
         // #bigContainer - contains all the files
+
+        // prints out the text
         console.log(data['text']);
         var bigDiv = document.getElementById('bigContainer')
         var spanData = document.createElement('span')
@@ -42,17 +46,15 @@ $(document).ready(function() {
     $("#mediaButton").mousedown(function() {
       console.log("recording...");
       recorder.startRecording();
-      if (recorder.isRecording()) {
-        // if it is running - check the time seconds every second
-        var recall = setInterval(checktime, 1000);
-        function checktime() {
-          time = recorder.recordingTime();
-          console.log(time);
-          // if time is over 4
-          if (time >= 4) {
-            $('#mediaButton').mouseup();
-            $('#mediaButton').mousedown();
-          }
+      // if it is running - check the time seconds every second
+      var recall = setInterval(checktime, 1000);
+      function checktime() {
+        time = recorder.recordingTime();
+        console.log(time);
+        // if time is over 4
+        if (time >= 4) {
+          $('#mediaButton').mouseup();
+          $('#mediaButton').mousedown();
         }
       }
     })
@@ -61,7 +63,9 @@ $(document).ready(function() {
     $("#mediaButton").mouseup(function() {
       console.log("done recording.");
       console.log("recording length: " + recorder.recordingTime());
-      recorder.finishRecording();
+      if (recorder.recordingTime() > 2) {
+        recorder.finishRecording();j
+      }
     })
   }
 
