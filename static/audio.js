@@ -28,18 +28,25 @@ $(document).ready(function() {
         // prints out the text
         console.log(data['text']);
         var bigDiv = document.getElementById('bigContainer')
-        var spanData = document.createElement('span')
+        bigDiv.style.marginTop = "0.4vh";
+        bigDiv.style.marginBottom = "0.6vh";
+
+        var smallDiv = document.createElement('div')
+        var spanData = document.createElement('div')
         bigDiv.style.padding="2px"
         // dynamically get the colour
         spanData.innerHTML = data['text'];
+        spanData.style.marginLeft="0.8em"
 
-        spanData.style.backgroundColor=data['color']
-        spanData.style.color="#FFFFFF"
-        spanData.style.fontSize="16px"
-        spanData.style.margin="2px"
+        smallDiv.style.backgroundColor=data['color']
+        smallDiv.style.color="#FFFFFF"
+        smallDiv.style.fontSize="16px"
+        smallDiv.style.margin="1.2em"
+        smallDiv.style.borderRadius = "8px"
 
 
-        bigDiv.append(spanData)
+        smallDiv.append(spanData)
+        bigDiv.append(smallDiv)
       })
     });
   

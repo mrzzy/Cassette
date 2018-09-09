@@ -29,9 +29,10 @@ def predict_sentiment(path):
         if predictions[i] > max_pred:
             max_pred = predictions[i]
             max_i = i
-    
+        
     
     names = [ l[0] for l in LABEL_MAP ]
+    print(dict(zip(names, predictions)))
     return names[max_i]
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ emotionMap = {
     'angry': '#CB4335',
     'fearful': '#9B59B6',
     'disgust': '#5B2C6F',
-    'surprise': '#026655'
+    'surprised': '#026655'
 }
 
 
