@@ -2,6 +2,8 @@ from flask import Flask, request, render_template, redirect, jsonify
 import datetime
 
 
+import backend.client
+
 app = Flask(__name__)
 
 
@@ -48,7 +50,7 @@ def audioprocess():
         '''
 
         # return_text = ('i am an angry flower', {'angry': 0.5})
-        return_text = ('i am an angry flower', 'surprise')
+        return_text = predict(string_wav)
         print(return_text[0])
         return jsonify(
             text=return_text[0],
