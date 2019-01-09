@@ -60,8 +60,10 @@
         <div>
           <img src="../static/images/cassette2.png" class='icon2'>
         </div>
-
-        <div id="mediaButton" class='button-align'>
+	<div class="trashcan" id="deleteBtn" onClick="deleteDivs()">
+	  <a class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">delete</i></a>
+	</div>
+        <div id="mediaButton" class='button-align' onclick="showTrashcan()">
           <a class="waves-effect waves-light btn-large">
             <!-- <i class="material-icons">keyboard_voice</i> -->
             <i id="playerIcon">Record</i>

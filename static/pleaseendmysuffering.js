@@ -16,3 +16,11 @@ function openNav() {
         }
     });
 }
+
+function deleteDivs() {
+  document.getElementById("bigContainer").innerHTML = "";
+}
+
+function showTrashcan() {
+  document.getElementById("deleteBtn").style.display = "block";
+}
