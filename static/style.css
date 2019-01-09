@@ -222,8 +222,8 @@
 @media screen and (max-width: 600px) {
   .container {
     width: 100%;
-    height: 100vh;
-    border-radius: 0;
+height: 100vh;
+border-radius: 0;
   }
 
   .cheatsheet-div {
@@ -253,6 +253,7 @@
 
   .sidebarBtn {
     padding-left: 3%;
+    margin-top: 60%;
     color: rgba(0, 0, 0, 0.87)
   }
 }
