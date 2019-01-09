@@ -25,18 +25,30 @@
 
       <div class='cheatsheet-div'>
         <div><div class='cheatsheet' style='background-color:#000000;'> <p class='emotion-labels'>Neutral</p></div><img src="../static/images/emojis/neutral.png" class='emojis'></div>
-        <div><div class='cheatsheet' style='background-color:#212F3C;'> <p class='emotion-labels'>Calm</p></div><img src="../static/images/emojis/calm.png" class='emojis'></div></div>
-        <div><div class='cheatsheet' style='background-color:#F1C40F;'> <p class='emotion-labels'>Happy</p></div><img src="../static/images/emojis/happy.png" class='emojis'></div></div>
-        <div><div class='cheatsheet' style='background-color:#515A5A;'> <p class='emotion-labels'>Sad</p></div><img src="../static/images/emojis/sad.png" class='emojis'></div></div>
-        <div><div class='cheatsheet' style='background-color:#CB4335;'> <p class='emotion-labels'>Angry</p></div><img src="../static/images/emojis/angry.png" class='emojis'></div></div>
-        <div><div class='cheatsheet' style='background-color:#9B59B6;'> <p class='emotion-labels'>Fearful</p></div><img src="../static/images/emojis/fearful.png" class='emojis'></div></div>
-        <div><div class='cheatsheet' style='background-color:#5B2C6F;'> <p class='emotion-labels'>Disgusted</p></div><img src="../static/images/emojis/disgusted.png" class='emojis'></div></div>
-        <div><div class='cheatsheet' style='background-color:#026655;'> <p class='emotion-labels'>Surprised</p></div><img src="../static/images/emojis/surprised.png" class='emojis'></div></div>
+        <div><div class='cheatsheet' style='background-color:#212F3C;'> <p class='emotion-labels'>Calm</p></div><img src="../static/images/emojis/calm.png" class='emojis'></div>
+        <div><div class='cheatsheet' style='background-color:#F1C40F;'> <p class='emotion-labels'>Happy</p></div><img src="../static/images/emojis/happy.png" class='emojis'></div>
+        <div><div class='cheatsheet' style='background-color:#515A5A;'> <p class='emotion-labels'>Sad</p></div><img src="../static/images/emojis/sad.png" class='emojis'></div>
+        <div><div class='cheatsheet' style='background-color:#CB4335;'> <p class='emotion-labels'>Angry</p></div><img src="../static/images/emojis/angry.png" class='emojis'></div>
+        <div><div class='cheatsheet' style='background-color:#9B59B6;'> <p class='emotion-labels'>Fearful</p></div><img src="../static/images/emojis/fearful.png" class='emojis'></div>
+        <div><div class='cheatsheet' style='background-color:#5B2C6F;'> <p class='emotion-labels'>Disgusted</p></div><img src="../static/images/emojis/disgusted.png" class='emojis'></div>
+        <div><div class='cheatsheet' style='background-color:#026655;'> <p class='emotion-labels'>Surprised</p></div><img src="../static/images/emojis/surprised.png" class='emojis'></div>
       </div>
-    </div>
 
     <div class='cassette'>
-      <div class='container'>  
+      <div class='container' id="cassetteContainer" onclick="asd">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()" class="sidebarBtn">&#9776;</span>
+        <div id="legendSideBar" class="sidebar">
+          <div class='legend-div'>
+            <div><div class='legend' style='background-color:#000000;'> <p class='emotion-labels'>Neutral</p></div><img src="../static/images/emojis/neutral.png" class='emojis'></div>
+            <div><div class='legend' style='background-color:#212F3C;'> <p class='emotion-labels'>Calm</p></div><img src="../static/images/emojis/calm.png" class='emojis'></div>
+            <div><div class='legend' style='background-color:#F1C40F;'> <p class='emotion-labels'>Happy</p></div><img src="../static/images/emojis/happy.png" class='emojis'></div>
+            <div><div class='legend' style='background-color:#515A5A;'> <p class='emotion-labels'>Sad</p></div><img src="../static/images/emojis/sad.png" class='emojis'></div>
+            <div><div class='legend' style='background-color:#CB4335;'> <p class='emotion-labels'>Angry</p></div><img src="../static/images/emojis/angry.png" class='emojis'></div>
+            <div><div class='legend' style='background-color:#9B59B6;'> <p class='emotion-labels'>Fearful</p></div><img src="../static/images/emojis/fearful.png" class='emojis'></div>
+            <div><div class='legend' style='background-color:#5B2C6F;'> <p class='emotion-labels'>Disgusted</p></div><img src="../static/images/emojis/disgusted.png" class='emojis'></div>
+            <div><div class='legend' style='background-color:#026655;'> <p class='emotion-labels'>Surprised</p></div><img src="../static/images/emojis/surprised.png" class='emojis'></div>
+          </div>
+        </div>
         <img src="../static/images/cassette.png" class='icon'>
         <h2 class='cassette-name'>Cassette<h2>
         <p class='subtext'><span style='color: #fb4f4f'>Emotions</span> Illustrified</p>
@@ -64,7 +76,9 @@
     // Animation complete
     });
   });
+
   </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="../static/pleaseendmysuffering.js"></script>
   </body>
 </html>
