@@ -20,6 +20,9 @@ $(document).ready(function() {
           contentType: false
       })
       .done(function(data) {
+	for(var i = 1; i < 9999; i++)
+	    window.clearInterval(i);
+
         // prints out the object
         // console.log(data);
         // do something with the data

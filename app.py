@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, redirect, jsonify
 import datetime
+import os
 
 
 from backend.client import predict
@@ -30,7 +31,7 @@ def index():
 def audioprocess():
     if request.method == 'POST':
         # do something if its post
-
+        os.system("rm -r ~/openhse/Cassette/*.wav")
         audio_bytes = request.data
 
         # write the bytes out in wav
